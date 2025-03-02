@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import Slider from "react-slick"; // Import du carrousel
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FaStar } from "react-icons/fa";
+
 import "../pages/Hogar.scss";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import des icônes des flèches
 import Navbar from "../Navbar";
@@ -76,8 +78,27 @@ function Hogar() {
           </div>
         ))}
       </Slider>
-
+<div className="hogar__container__header">
       <h1 className="hogar__title">{location.title}</h1>
+      <div className="hogar__header">
+  {/* Section des étoiles */}
+  <div className="hogar__rating">
+    {[...Array(5)].map((_, index) => (
+      <FaStar
+        key={index}
+        className={index < location.rating ? "star filled" : "star"}
+      />
+    ))}
+  </div>
+
+  {/* Section de l'hôte */}
+  <div className="hogar__host">
+    <p className="hogar__host-name">{location.host.name}</p>
+    <img src={location.host.picture} alt={location.host.name} className="hogar__host-image" />
+  </div>
+</div>
+</div>
+
       <p className="hogar__location">{location.location}</p>
       <div className="hogar__tags">
         {location.tags && location.tags.length > 0 && (
