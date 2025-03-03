@@ -206,3 +206,11 @@ i {
   border-radius: 50%;
   object-fit: cover;
 }
+
+@media (max-width: 768px){
+  
+  .hogar__image{
+    width:auto;
+  }
+ 
+}

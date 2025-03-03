@@ -51,4 +51,9 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+@media (max-width: 768px) {
+  .main__container {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=Main.css.map */
